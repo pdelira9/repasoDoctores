@@ -1,1 +1,40 @@
-<p>listar-doctores works!</p>
+ 
+<div class="container py-4 d-flex justify-content-center">
+  <div class="w-100" style="max-width: 80%;">
+    <h2 class="mb-4 text-center">Lista de Doctores</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle text-center">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Cuidad</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Foto</th>    
+        </tr>
+        </thead>
+        <tbody>
+          @for (medicos of misDoctores; track medicos) {
+            <tr>
+              <td>{{ medicos.id }}</td>
+              <td>{{ medicos.nombre }}</td>
+              <td>{{ medicos.especialidad }}</td>
+              <td>{{ medicos.anios_experiencia }} año{{ medicos.anios_experiencia > 1 ? 's' : ''}}</td>
+              <td>{{ medicos.ciudad }}</td>
+              <td>{{ medicos.telefono }}</td>
+              <td>
+                <img [src]="medicos.foto"
+                     class="rounded-circle shadow-sm"
+                     width="60" height="60"
+                     alt="Foto de {{ medicos.nombre }}">
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

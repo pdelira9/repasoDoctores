@@ -1,8 +1,10 @@
 export interface Personal {
-    nombre:string;
-    edad:number;
-    sueldo:number;
-    antiguedad:number;
-    foto:string;
+
     id:number;
+    nombre:string;
+    especialidad:string;
+    anios_experiencia:number;
+    ciudad:string;
+    telefono:string;
+    foto:string;
 }

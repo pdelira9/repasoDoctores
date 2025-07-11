@@ -1,0 +1,34 @@
+ @if (mensajeEliminado !== '') {
+  <div class="alerta-flotante alert alert-success alert-dismissible fade-in-out text-center">
+    {{ mensajeEliminado }}   
+  </div>
+}
+
+@if (medicos.length > 0) {
+  <div class="table-responsive mt-4 w-50 mx-auto bg-light border p-3" >
+    <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Foto</th>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (med of medicos; track med.id) {
+          <tr>
+            <td><img [src]="med.foto" alt="foto" style="width: 60px; height: 60px; object-fit: cover;" class="rounded-circle"></td>
+            <td>{{ med.id }}</td>
+            <td>{{ med.nombre }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="eliminarMedico(med.id)">Eliminar</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+} @else {
+  <div class="alert alert-info mt-4">No existen medicos.</div>
+}

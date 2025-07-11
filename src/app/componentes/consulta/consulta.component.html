@@ -1,0 +1,22 @@
+ 
+<div class="consulta  d-flex justify-content-center">
+  
+    @if (medico !== null) {
+    <div class="card p-3 mt-4 d-flex flex-row  "  >
+        <img [src]="medico.foto" alt="Foto del medico" class="img-thumbnail me-3"  >
+        <div>
+        <h5 class="card-title mb-2">{{ medico.nombre }}</h5>
+        <p class="mb-1"><strong>ID:</strong> {{ medico.id }}</p>
+        <p class="mb-1"><strong>Especialidad:</strong> {{ medico.especialidad }}</p>
+        <p class="mb-1"><strong>Años de experiencia:</strong> {{ medico.anios_experiencia > 1 ? 's' : ''}}</p>
+        <p class="mb-1"><strong>Ciudad:</strong> ${{ medico.ciudad}}</p>    
+        <p class="mb-0"><strong>Teléfono:</strong> {{ medico.telefono }} años</p>
+        </div>
+    </div>
+    } @else {
+    <div class="alert alert-warning mt-4   ">
+        No se encontró ningún medico con el ID {{ id }}.
+    </div>
+    }
+
+</div>

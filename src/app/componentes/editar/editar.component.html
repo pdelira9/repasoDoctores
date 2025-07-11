@@ -1,11 +1,17 @@
+@if (mensajeDeExito !== '') {
+  <div class="alert alert-success text-center alerta-flotante">
+    {{ mensajeDeExito }}   
+  </div>
+}
+
 <div class="menu">
 <div class="container mt-4">
-  <h3>Agregar Doctores</h3>
+  <h3>Actualizar Doctores</h3>
   
-  <form #form="ngForm" (ngSubmit)="guardar()">
+  <form #form="ngForm" (ngSubmit)="actualizar()">
     <div class="mb-3">
       <label>ID</label>
-      <input type="number" class="form-control" [(ngModel)]="medico.id" name="id" required>
+      <input type="number" class="form-control" [(ngModel)]="medico.id" name="id" readonly>
     </div>
 
     <div class="mb-3">
@@ -54,8 +60,3 @@
   </form>
 </div>
 </div>  
-
-<div>
-    {{mensajeExito}}
-</div>
- 
